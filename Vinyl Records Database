@@ -1,0 +1,31 @@
+CREATE TABLE vinyl_records (id INTEGER PRIMARY KEY, name TEXT, size TEXT, color TEXT, price INTEGER); 
+
+INSERT INTO vinyl_records VALUES (1, "Tammi Terrel", "LP", "red", 4),
+(2, "James Carr", "EP", "black", 5),
+(3, "OV Wright", "EP", "green", 4),
+(4, "Fugazi", "LP", "black", 10),
+(5, "Otis Clay", "EP", "black", 3),
+(6, "Jimmy Hughes", "EP", "black", 8), 
+(7, "Penny & The Quarters", "LP", "orange", 3), 
+(8, "Sam Cooke", "LP", "yellow", 9),
+(9, "Otis Redding", "LP", "black", 12),
+(10, "Phil Phillips", "LP", "blue", 10),
+(11, "Donny Hathaway", "LP", "red", 8),
+(12, "Major Lance", "LP", "green", 10),
+(13, "Eddie Ray", "LP", "black", 11),
+(14, "Fela Kuti", "EP", "green", 5),
+(15, "Nina Simone", "LP", "red", 20);
+
+
+--display the database ordered by price
+SELECT * FROM vinyl_records
+ORDER BY price;
+
+--which of the records have the longest play
+SELECT name from vinyl_records
+ORDER BY size desc
+limit 9;
+
+--display vinyl records that are pressed on black vinyl
+SELECT name, color FROM vinyl_records
+WHERE color = "black"; 
